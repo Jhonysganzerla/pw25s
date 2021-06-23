@@ -330,7 +330,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 ```
 Um exemplo de consulta está exemplificado graficamente na próxima imagem (abrir a imagem em nova janela para melhor visualização).
 - `List<Produto> findByNomeContainsOrValorGreaterThanOrderByNomeDesc(String Nome, Double valor);`
-![List<Produto> findByNomeContainsOrValorGreaterThanOrderByNomeDesc(String Nome, Double valor);](https://github.com/viniciuspegorini/pw25s/blob/master/aulas/imagens/aula2_consulta_nome-valor.png)
+![List<Produto> findByNomeContainsOrValorGreaterThanOrderByNomeDesc(String Nome, Double valor);](https://github.com/viniciuspegorini/pw25s/blob/main/arquivos/imagens/aula2_consulta_nome-valor.png)
 
 ### Consultas com JPQL
 
