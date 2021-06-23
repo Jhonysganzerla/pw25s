@@ -1,4 +1,4 @@
-package br.edu.utfpr.pb.aula1;
+package br.edu.utfpr.pb.pw25s.aula1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

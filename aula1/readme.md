@@ -1,4 +1,4 @@
-# Spring Framework - Aula 1
+# Spring Framework
 
 ## Introdução
 
@@ -22,4 +22,4 @@ A Injeção de dependências (ou Dependency Injection – DI) é um é um padrã
 
 [2] JOHNSON, R. E.; FOOTE, B.. Designing reusable classes. Journal of Object-Oriented Programming, 1(2):22–35, 1988.
 
-[3] Prasanna, D.R., Dependency Injection: Design Patterns Using Spring and Guice}, isbn={9781933988559}, Manning- Manning Pubs Co Series,  url={https://books.google.com.br/books?id=b6O6OgAACAAJ, 2009.
+[3] Prasanna, D.R., Dependency Injection: Design Patterns Using Spring and Guice, isbn=9781933988559, Manning- Manning Pubs Co Series,  url=https://books.google.com.br/books?id=b6O6OgAACAAJ, 2009.

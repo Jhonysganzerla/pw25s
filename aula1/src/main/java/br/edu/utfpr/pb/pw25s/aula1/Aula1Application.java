@@ -1,4 +1,4 @@
-package br.edu.utfpr.pb.aula1;
+package br.edu.utfpr.pb.pw25s.aula1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
