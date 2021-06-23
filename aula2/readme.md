@@ -16,7 +16,7 @@ O projeto será criado utilizando como base o *framework* Spring Boot, que por s
 Será criado um projeto [Maven](https://maven.apache.org/) por meio da ferramenta web [Spring Initializr](https://start.spring.io/) com as seguintes configurações:
 O projeto será do tipo **Maven Project**.
 A linguagem será **Java**.
-A versão do Spring Boot será a versão estável atual na data de criação do projeto (**2.2.5**).
+A versão do Spring Boot será a versão estável atual na data de criação do projeto (**2.5.1**).
 Os metadados do projeto são:
 - Group: **br.edu.utfpr.pb.pw25s**
 - Artifact: **aula2**
@@ -34,82 +34,68 @@ O projeto está configurado e pode ser realizado o download do mesmo e importado
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-    <groupId>br.edu.utfpr.pb</groupId>
-    <artifactId>aula2</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>aula2</name>
-    <description>Projeto aula1 da disciplina PW25S</description>
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.2.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>br.edu.utfpr.pb.pw25s</groupId>
+	<artifactId>aula2</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>aula2</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>11</java.version>
+	</properties>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
 ```
 Após importar o projeto é necessário realizar as configurações de conexão com o banco de dados no arquivo `application.properties`, será utilizado o banco de dados PostgreSQL, as configurações dos demais SGBDs estão comentadas: 
@@ -118,19 +104,19 @@ Após importar o projeto é necessário realizar as configurações de conexão 
 server.port=8025
 
 # estratégia utilizado para o DDL
-spring.jpa.hibernate.ddl-auto=create-drop
-spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto:create-drop
+spring.jpa.show-sql:true
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 
 #Banco Postgres
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
-spring.datasource.url=jdbc:postgresql://localhost:5432/pw25s_aula2
+spring.datasource.url=jdbc:postgresql://localhost:5432/pw25s-aula2
 spring.datasource.username=postgres
 spring.datasource.password=postgres
 spring.datasource.driverClassName=org.postgresql.Driver
 
 #Banco Mysql
-#spring.datasource.url=jdbc:mysql://localhost:3306/pw25s_aula2?useSSL=false
+#spring.datasource.url=jdbc:mysql://localhost:3306/pw25s-aula1?useSSL=false
 #spring.datasource.username=root
 #spring.datasource.password=root
 #spring.jpa.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
@@ -138,7 +124,7 @@ spring.datasource.driverClassName=org.postgresql.Driver
 
 # Banco H2 + H2 Console
 #spring.h2.console.enabled=true
-#spring.datasource.url=jdbc:h2:mem:pw25s_aula2
+#spring.datasource.url=jdbc:h2:mem:pw25s-aula1
 #spring.datasource.driverClassName=org.h2.Driver
 #spring.datasource.username=sa
 #spring.datasource.password=
@@ -178,7 +164,7 @@ public class Categoria implements Serializable{
 	private Long id;
 	
 	@Column(length = 50, nullable = false)
-	private String descricao;
+	private String nome;
 	
 }
 ```
@@ -268,14 +254,14 @@ public class Aula2Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		Categoria c1 = new Categoria();
-		c1.setDescricao("Categoria Teste");
+		c1.setNome("Categoria Teste");
 		salvarCategoria(c1);
 
-		c1.setDescricao("Games");
+		c1.setNome("Games");
 		salvarCategoria(c1);
 
 		Categoria c2 = new Categoria();
-		c2.setDescricao("Eletrônicos");
+		c2.setNome("Eletrônicos");
 		salvarCategoria(c2);
 
 		listarCategorias();
@@ -313,7 +299,7 @@ public class Aula2Application implements CommandLineRunner {
 
 Por padrão a interface `JpaRepository` já possui métodos para buscar todos os registros, um único registro, fazer buscas páginadas. Porém durante o desenvolvimento é comum a criação de consultas personalizadas no SGBD filtrando por algum dos campos. Para isso existem algumas maneiras de realizar essas consultas, que será listado nos próximos tópicos.
 
-### Consultas na Assinatura dos métodos
+### Consultas na assinatura dos métodos
 A maneira mais simples de realizar consultas realizando a interface `JpaRepository` é utilizando a assinatura de métodos. Para exemplificar as consultas será utilizado como exemplo consultas realizadas na interface para persistência de produtos `ProdutoRepository`.
 
 ```Java
@@ -332,8 +318,8 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	List<Produto> findByValorGreaterThanEqualOrderByNomeDesc(Double valor);
 
 	// Retorna uma lista de Produtos filtrando pelo nome da categoria
-	// Obs.: como o campo descrição é um atributo da classe Categoria, primeiro deve ser informado o atributo Categoria da classe produto, depois o atributo Descricao da classe categoria.
-	List<Produto> findByCategoriaDescricaoContains(String categoria);
+	// Obs.: como o campo nome é um atributo da classe Categoria, primeiro deve ser informado o atributo Categoria da classe produto, depois o atributo Nome da classe categoria.
+	List<Produto> findByCategoriaNomeContains(String categoria);
     
     // Retorna uma lista de Produtos filtrando pelo id da categoria
 	List<Produto> findByCategoriaId(Long id);
@@ -342,43 +328,32 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	List<Produto> findByDataFabricacaoBetween(LocalDate dataIni, LocalDate dataFim);
 }
 ```
-Um exemplo de consulta está exemplificado graficamente na próxima imagem.
+Um exemplo de consulta está exemplificado graficamente na próxima imagem (abrir a imagem em nova janela para melhor visualização).
 - `List<Produto> findByNomeContainsOrValorGreaterThanOrderByNomeDesc(String Nome, Double valor);`
-
-![List<Produto> findByNomeContainsOrValorGreaterThanOrderByNomeDesc(String Nome, Double valor);](https://github.com/viniciuspegorini/pw25s-2020-1/blob/master/aulas/imagens/consulta_nome-valor.png)
+![List<Produto> findByNomeContainsOrValorGreaterThanOrderByNomeDesc(String Nome, Double valor);](https://github.com/viniciuspegorini/pw25s/blob/master/aulas/imagens/aula2_consulta_nome-valor.png)
 
 ### Consultas com JPQL
 
-### Consultas com query Nativa
+### Consultas com query nativa
 
 
 ## Conclusão
 
 ## Referências
-Spring Data JPA - Disponível em: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
+[1] Spring Data JPA - Disponível em: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
 
 ## Atividade
-Criar um novo projeto realizar o mapeamento ORM das classes e criar os repositórios para:
+1. Criar um novo projeto realizar o mapeamento ORM das classes e criar os repositórios para:
  - Cidade {id, nome}
  - Autor {id, nome}
  - Editora {id, nome}
  - Genero {id, descricao}
  - Livro {id, titulo, EDITORA, GENERO, AUTOR, ano, isbn, CIDADE, valor}
 
-  Consultas:
-
- - Retornar os Livros pesquisando por parte do nome do autor e ordenando
-   por ano. 
-
+  2. Consultas:
+ - Retornar os Livros pesquisando por parte do nome do autor e ordenando por ano. 
  - Retornar os livros filtrando por ano.
-
- - Retornar os livros    filtrando    pela descrição do gênero e
-   ordenando por ano. 
-
- - Retornar os    livros    filtrando a mesma string    pelo ISBN ou
-   Título e ordenar por ano       
-
- - Retornar os livros com    valores    maiores que... 
-
- - Retornar os    livros com     valores entre A* e    B*    ordenados
-   por ano
+ - Retornar os livros filtrando pela descrição do gênero e ordenando por ano. 
+ - Retornar os livros filtrando a mesma string pelo ISBN ou Título e ordenar por ano       
+ - Retornar os livros com valores maiores que... 
+ - Retornar os livros com valores entre A* e B* ordenados por ano
