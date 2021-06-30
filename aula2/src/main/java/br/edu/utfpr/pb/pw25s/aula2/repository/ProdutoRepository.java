@@ -24,8 +24,8 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	List<Produto> findByValorGreaterThanEqualOrderByNomeDesc(Double valor);
 
 	// Select * from Produto Inner Join Categoria on categoria.id = produto.categoria_id 
-	//    Where categoria.descricao LIKE '%:descricao%'
-	List<Produto> findByCategoriaDescricaoContains(String categoria);
+	//    Where categoria.nome LIKE '%:nome%'
+	List<Produto> findByCategoriaNomeContains(String categoria);
 	
 	List<Produto> findByCategoriaId(Long id);
 	

@@ -21,6 +21,6 @@ public class Categoria implements Serializable{
 	private Long id;
 	
 	@Column(length = 50, nullable = false)
-	private String descricao;
+	private String nome;
 	
 }

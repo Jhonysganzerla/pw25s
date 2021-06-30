@@ -29,15 +29,15 @@ public class Aula2Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		Categoria c1 = new Categoria();
-		c1.setDescricao("Categoria Teste");
+		c1.setNome("Categoria Teste");
 
 		salvarCategoria(c1);
 
-		c1.setDescricao("Games");
+		c1.setNome("Games");
 		salvarCategoria(c1);
 
 		Categoria c2 = new Categoria();
-		c2.setDescricao("Eletrônicos");
+		c2.setNome("Eletrônicos");
 		salvarCategoria(c2);
 
 		listarCategorias();
@@ -90,7 +90,7 @@ public class Aula2Application implements CommandLineRunner {
 	private void listarCategoriasFindByDescricaoLike() {
 
 		System.out.println("\n *********** LISTA DE CATEGORIAS LIKE ***********");
-		this.categoriaRepository.findByDescricaoLike("%G%").forEach(c -> System.out.println(c));
+		this.categoriaRepository.findByNomeLike("%G%").forEach(c -> System.out.println(c));
 		System.out.println("\n *********** LISTA DE CATEGORIAS LIKE ***********");
 	}
 

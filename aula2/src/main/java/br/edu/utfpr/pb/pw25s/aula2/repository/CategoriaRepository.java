@@ -8,6 +8,6 @@ import java.util.List;
 public interface CategoriaRepository extends JpaRepository<Categoria, Long>{
 	
 	// Select * from Categoria where descricao like '%am%'
-	List<Categoria> findByDescricaoLike(String descricao);
+	List<Categoria> findByNomeLike(String descricao);
 	
 }
