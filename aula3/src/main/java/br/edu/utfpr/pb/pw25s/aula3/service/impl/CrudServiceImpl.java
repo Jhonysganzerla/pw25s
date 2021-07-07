@@ -18,6 +18,7 @@ public abstract class CrudServiceImpl <T, ID extends Serializable> implements Cr
 	@Override
 	@Transactional(readOnly = true)
 	public List<T> findAll() {
+		//return getRepository().findAll(Sort.by(Sort.Direction.ASC, "id"));
 		return getRepository().findAll();
 	}
 	
