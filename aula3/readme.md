@@ -34,10 +34,14 @@ Por fim, a camada **controladora** (*Controller*) é responsável por orquestrar
 ### 2.2 Spring MVC
 
 A estrutura do Spring Web MVC é projetada em torno de um **DispatcherServlet** que envia solicitações para um mapeador de requisições (*Handler Mapping*). O mapeador padrão é baseado nas anotações @Controller e @RequestMapping, oferecendo uma ampla variedade de métodos de manipulação flexíveis. Com a introdução do Spring 3.0, o mecanismo @Controller também permite criar aplicacões RESTful, por meio da anotação @PathVariable e outros recursos [6].
+
 ![Requisição HTTP](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/images/mvc.png)
+
 Como citado no parágrafo anterior o DispatcherServlet é o componente responsável por orquestrar o funcionamento do Spring MVC. O qual é uma implementação do padrão *Front Controller* que é muito usado na escrita de *frameworks* voltados para o desenvolvimento de aplicações web. O objetivo deste padrão de projeto é fornecer um ponto de entrada central  
 para todas as requisições direcionadas à aplicação. É uma responsabilidade do DispatcherServlet interpretar e decidir qual o componente responsável pelo processamento de cada requisição e  seu eventual retorno para o usuário, conforme pode ser observado nas figuras a seguir [6].
+
 ![DispacherServlet](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/images/mvc-contexts.gif)
+
 ### 2.3 Thymeleaf
 O [Thymeleaf](http://www.thymeleaf.org/)  é um motor de template (*template engine*) que atua no lado servidor (*server-side*) para Java para processamento e criação de HTML, XML, JavaScript, CSS, e text [4].
 Essa biblioteca é extensível e sua capacidade de modelagem garante que os modelos possam ser prototipados sem um *back-end* o que torna o desenvolvimento muito rápido quando comparado com outros motores de template, como o Java Server Pages (JSP) [4].
