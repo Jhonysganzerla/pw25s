@@ -27,8 +27,11 @@ Como o projeto foi desenvolvido com Maven e Spring Boot o processo para executar
 ### 2.1 A arquitetura MVC
 
 O projeto Spring MVC é o framework da família Spring que auxilia no  desenvolvimento de aplicações web. O padrão de projeto *Model, View e Controller* (MVC) é muito utilizado no desenvolvimento de aplicações web, e entender bem a responsabilidade de cada parte do MVC é importante para o desenvolvimento uma aplicação bem escrita e de fácil manutenibilidade.
+
 A camada **modelo** (*Model*) está relacionada à toda a parte do sistema que será responsável pela lógica de negócio e seus componentes auxiliares, como persistência de dados, cache, integração com  outros sistemas, entre outros.  
+
 A camada de **visualização** (*View*), é a parte visual da aplicação, que é apresentada ao usuário final. Ao visualizar uma página HTML, por exemplo, o usuário está acessando o resultado desta camada.
+
 Por fim, a camada **controladora** (*Controller*) é responsável por orquestrar a interação entre as camadas de modelo e visualização. Quando o usuário preenche um formulário em uma página web, por exemplo, ele está interagindo com a camada de visualização, entretanto quando ele clica no botão enviar, é realizada uma chamada para o servidor e o controlador é acionado. Este transforma os parâmetros inseridos pelo usuário para um formato que seja compatível com a interface disponibilizada pela camada de modelo. Então, os dados são processados e o resultado do processamento é recebido novamente pelo controlador, que o modifica caso necessário e em seguida o envia à camada de visualização novamente, para que o resultado possa ser visualizado pelo usuário final.
 
 ### 2.2 Spring MVC
